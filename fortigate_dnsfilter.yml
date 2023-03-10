@@ -1,0 +1,28 @@
+---
+- hosts: fortigate
+  connection: httpapi
+  collections:
+    - fortinet.fortios
+  vars:
+   vdom: "root"
+   ansible_httpapi_use_ssl: yes
+   ansible_httpapi_validate_certs: no
+   ansible_httpapi_port: 4443
+  tasks:
+  - name: Configure DNS domain filter profile.
+    fortios_dnsfilter_profile:
+      vdom:  "{{ vdom }}"
+      state: "present"
+      #access_token: "{{ fortios_access_token }}"
+      dnsfilter_profile:
+        block_action: "block"
+        comment: "Comment."
+        dns_translation:
+         -
+            addr_type: "ipv4"
+            dst: "10.240.10.0"
+            id:  "10"
+            netmask: "255.255.255.0"
+            src: "10.50.50.0"
+            status: "enable"
+        name: "default_name_28"
