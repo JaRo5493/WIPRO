@@ -1,8 +1,6 @@
 ---
 - hosts: fortigate
   connection: httpapi
-  #collections:
-  #  - fortinet.fortios
   vars:
    vdom: "root"
    ansible_httpapi_use_ssl: yes
