@@ -14,7 +14,7 @@
       #access_token: "{{ fortios_access_token }}"
       dnsfilter_profile:
         block_action: "block"
-        comment: "Comment."
+        comment: "Comment.2"
         dns_translation:
          -
             addr_type: "ipv4"
@@ -24,3 +24,5 @@
             src: "10.50.50.0"
             status: "enable"
         name: "default_name_28"
+      ftgd_dns:
+            options: "ftgd-disable"
