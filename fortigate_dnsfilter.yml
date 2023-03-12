@@ -13,7 +13,7 @@
       state: "present"
       #access_token: "{{ fortios_access_token }}"
       dnsfilter_profile:
-        block_action: "block"
+        #block_action: "block"
         comment: "Comment.2"
         dns_translation:
          -
