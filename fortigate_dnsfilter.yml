@@ -24,5 +24,5 @@
             src: "10.50.50.0"
             status: "enable"
         name: "default_name_28"
-      ftgd_dns:
-            options: "ftgd-disable"
+        ftgd_dns:
+              options: "ftgd-disable"
