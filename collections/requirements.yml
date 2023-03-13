@@ -1,0 +1,9 @@
+---
+collections:
+# With the collection name, version, and source options
+- name: fortinet.fortios
+  version: "2.2.2"
+- name: ansible.netcommon
+  version: "ansible.netcommon"
+- name: ansible.utils
+  version: "2.9.0"
