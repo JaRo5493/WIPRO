@@ -1,0 +1,20 @@
+- hosts: fortigate
+  connection: httpapi
+  vars:
+    ansible_httpapi_use_ssl: yes
+    ansible_httpapi_validate_certs: no
+    ansible_httpapi_port: 4443
+    vdom: "root"
+  tasks:
+  - name: Get DNS Filter
+    fortinet.fortios.fortios_configuration_fact:
+      access_token: "{{ fortios_access_token }}"
+      selector: firewall_dnstranslation
+    register: result
+      #optionally list or single get
+      #params:
+      #  id: "3"
+
+  - name: 'Print Result'
+    ansible.builtin.debug:
+      var: result
