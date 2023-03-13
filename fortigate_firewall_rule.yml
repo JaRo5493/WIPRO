@@ -1,0 +1,36 @@
+---
+- hosts: fortigate
+  connection: httpapi
+  vars:
+   vdom: "root"
+   ansible_httpapi_use_ssl: yes
+   ansible_httpapi_validate_certs: no
+   ansible_httpapi_port: 4443
+  tasks:
+  - name: Configure IPv4/IPv6 policies.
+    fortinet.fortios.fortios_firewall_policy:
+      state: "present"
+      #access_token: "{{ fortios_access_token }}"
+      firewall_policy:
+        policyid: "10"
+        action: "accept"
+        schedule: "always"
+        name: "default_name_124"
+        comments: "<your_own_value>"
+        dnsfilter_profile: "default_name_28"
+        dstaddr:
+         -
+            name: "all"
+        dstintf:
+         -
+            name: "WAN_Sunrise"
+        srcaddr:
+         -
+            name: "all"
+        srcintf:
+         -
+            name: "_default"
+        service:
+         -
+            name: "ALL"
+        status: "enable"
